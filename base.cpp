@@ -23,8 +23,7 @@
  *
  * @params uint8_t model (look for cppduino::models)
  */
-cppduino::Arduino::Arduino(uint8_t model) {
-  Serial.println("Hello World");
+cppduino::Arduino::Arduino(uint8_t model):_model(model) {
 }
 
 /**
@@ -34,7 +33,6 @@ cppduino::Arduino::Arduino(uint8_t model) {
  * Inicializa a classe Arduino sem um modelo específico
  */
 cppduino::Arduino::Arduino(void) {
-  Serial.println("Without model");
 }
 
 /**
