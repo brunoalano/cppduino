@@ -19,6 +19,7 @@
 #include "Arduino.h"
 
 // Load the project
+#include "pin.h"
 #include "base.h"
 
 /**

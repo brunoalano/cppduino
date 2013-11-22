@@ -50,13 +50,4 @@ cppduino::Arduino::~Arduino() {
  * @param pins a vector with the pins positions
  */
 void cppduino::Arduino::set_output_pins(uint8_t pins[]) {
-  int i = 0;
-  while(i < sizeof(pins)/sizeof(uint8_t)) {
-    // Setup the pin
-    pinMode(pins[i], OUTPUT);
-
-    // Send to the Arduino Class
-    this->_output_pins[i] = pins[i];
-    i++;
-  }
 }

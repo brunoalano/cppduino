@@ -12,8 +12,8 @@
  */
 
 // Guard
-#ifndef CPPDUINO_BASE_H
-#define CPPDUINO_BASE_H
+#ifndef CPPDUINO_PIN_H
+#define CPPDUINO_PIN_H
 
 // Project Dependencies
 #include "Arduino.h"
