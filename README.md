@@ -23,6 +23,19 @@ Now open the __Arduino IDE__ with your project sketch, go in the __Menu -> Sketc
 
 In your source code, import our library using:
 
-`#include <cppduino/Base.h>`
+`#include <cppduino.h>`
 
+### Creating an Arduino Object
+```
+#include <cppduino.h>
+
+// Create the Arduino Manager
+cppduino::Arduino myRobot(cppduino::models::ARDUINO_MODEL_UNO)
+// or
+cppduino::Arduino myRobot();
+
+// Select what output pins you want
+uint8_t output_pins[] = {1, 4, 7, 8};
+myRobot.set_output_pins(output_pins);
+```
 __Done!__

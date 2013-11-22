@@ -12,10 +12,14 @@
  */
 
 // Guard
-#ifndef CPPDUINO_SRC_CPPDUINO_H
-#define CPPDUINO_SRC_CPPDUINO_H
+#ifndef CPPDUINO_CPPDUINO_H
+#define CPPDUINO_CPPDUINO_H
 
 // Project Dependencies
+#include "Arduino.h"
+
+// Load the project
+#include "base.h"
 
 /**
  * cppduino namespace
