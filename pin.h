@@ -18,7 +18,6 @@
 // Project Dependencies
 #include "Arduino.h"
 #include "cppduino.h"
-#include "pin.h"
 
 /**
  * cppduino namespace
@@ -28,36 +27,27 @@
  */
 namespace cppduino {
   /**
-   * Arduino Manager Class
+   * Pin Manager
    *
-   * Esta classe é responsável por criar uma base class que irá
-   * gerenciar todo o Arduino.
-   *
-   * Constructor:
-   *  Arduino(uint model);
+   * Esta classe é responsável por controlar os pins com diversas
+   * funções de gerenciamento.
    */
-  class Arduino {
+  class Pin {
   private:
-    // Store the Arduino Model
-    uint8_t _model;
-
-    // Store the output pins
-    uint8_t _output_pins[16];
+    uint8_t _port; // pin field, 0 ~ 13
+    bool _status; // on or off
+    uint8_t _mode; // 0x0, 0x1 or 0x2
   public:
-    Arduino (uint8_t model); // with a defined model (Constructor)
-    Arduino (void); // without defined model (Constructor)
-
     /**
-     * setup the pins with the output mode
-     * @param pins a vector with the pins positions
+     * Create the Pin
      *
-     * Example:
-     *   - set_output_pins()
+     * @param port receive the pin field (0~13)
+     * @param status on or off
+     * @param mode 0x0, 0x1 or 0x2 (INPUT, OUTPUT, INPUT_PULLUP)
      */
-    void set_output_pins(uint8_t pins[]);
-
-    ~Arduino(); // destructor
+    Pin(uint8_t port, bool status, uint8_t mode);
   };
+  
 }
 
 // End Guard
