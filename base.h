@@ -49,11 +49,8 @@ namespace cppduino {
     /**
      * setup the pins with the output mode
      * @param pins a vector with the pins positions
-     *
-     * Example:
-     *   - set_output_pins()
      */
-    void set_output_pins(uint8_t pins[]);
+    void set_pin(cppduino::Pin pin);
 
     ~Arduino(); // destructor
   };

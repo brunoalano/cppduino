@@ -49,5 +49,7 @@ cppduino::Arduino::~Arduino() {
  * setup the pins with the output mode
  * @param pins a vector with the pins positions
  */
-void cppduino::Arduino::set_output_pins(uint8_t pins[]) {
+void cppduino::Arduino::set_pin(cppduino::Pin pin) {
+  // Get pin port
+  this->_pins[pin.getPort()] = pin;
 }
