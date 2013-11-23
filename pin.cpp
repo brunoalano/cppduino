@@ -36,3 +36,7 @@ cppduino::Pin::Pin(uint8_t port, bool status, uint8_t mode):_port(port),_status(
     digitalWrite(port, 0x0);
   }
 }
+
+cppduino::Pin::~Pin(){
+
+}

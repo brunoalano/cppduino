@@ -17,7 +17,6 @@
 
 // Project Dependencies
 #include "Arduino.h"
-#include "cppduino.h"
 
 /**
  * cppduino namespace
@@ -46,6 +45,7 @@ namespace cppduino {
      * @param mode 0x0, 0x1 or 0x2 (INPUT, OUTPUT, INPUT_PULLUP)
      */
     Pin(uint8_t port, bool status, uint8_t mode);
+    ~Pin();
   };
   
 }

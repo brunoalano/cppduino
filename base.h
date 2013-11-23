@@ -17,7 +17,6 @@
 
 // Project Dependencies
 #include "Arduino.h"
-#include "cppduino.h"
 #include "pin.h"
 
 /**
