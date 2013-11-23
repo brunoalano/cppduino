@@ -25,7 +25,7 @@
  * @param status default status its false
  * @param mode 0x0, 0x1 or 0x2 (INPUT, OUTPUT, INPUT_PULLUP)
  */
-cppduino::Pin::Pin(uint8_t port, bool status, uint8_t mode):_port(port),_status(status),_mode(mode) {
+cppduino::Pin::Pin(uint8_t port, boolean status, uint8_t mode):_port(port),_status(status),_mode(mode) {
   // Setup the Pin Mode
   pinMode(port, mode);
 
@@ -38,5 +38,33 @@ cppduino::Pin::Pin(uint8_t port, bool status, uint8_t mode):_port(port),_status(
 }
 
 cppduino::Pin::~Pin(){
+}
 
+/**
+ * Get the Pin Port
+ *
+ * @return uint8_t
+ */
+uint8_t cppduino::Pin::getPort(void) {
+  return _port;
+}
+
+/**
+ * Flip the Pin Status
+ *
+ * @return boolean the current status of pin
+ */
+boolean cppduino::Pin::flip(void) {
+  // Action
+  if (_status == 0x1) {
+    Serial.println("Ligando");
+    digitalWrite(getPort(), HIGH);
+    _status = 0x0;
+  } else {
+    Serial.println("Desligando");
+    digitalWrite(getPort(), LOW);
+    _status = 0x1;
+  }
+
+  return _status;
 }

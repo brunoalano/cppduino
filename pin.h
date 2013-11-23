@@ -32,9 +32,9 @@ namespace cppduino {
    * funções de gerenciamento.
    */
   class Pin {
-  private:
+  protected:
     uint8_t _port; // pin field, 0 ~ 13
-    bool _status; // on or off
+    boolean _status; // on or off
     uint8_t _mode; // 0x0, 0x1 or 0x2
   public:
     /**
@@ -44,8 +44,20 @@ namespace cppduino {
      * @param status on or off
      * @param mode 0x0, 0x1 or 0x2 (INPUT, OUTPUT, INPUT_PULLUP)
      */
-    Pin(uint8_t port, bool status, uint8_t mode);
+    Pin(uint8_t port, boolean status, uint8_t mode);
     ~Pin();
+
+    /**
+     * Get the Pin Port
+     *
+     * @return uint8_t
+     */
+    uint8_t getPort(void);
+
+    /**
+     * Flip the Pin Status
+     */
+    boolean flip(void);
   };
   
 }

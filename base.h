@@ -52,6 +52,14 @@ namespace cppduino {
      */
     void set_pin(cppduino::Pin pin);
 
+    /**
+     * get a pin
+     * 
+     * @param uint8_t port
+     * @return cppduino::Pin
+     */
+    cppduino::Pin get_pin(uint8_t port);
+
     ~Arduino(); // destructor
   };
 }

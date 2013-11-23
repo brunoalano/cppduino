@@ -53,3 +53,14 @@ void cppduino::Arduino::set_pin(cppduino::Pin pin) {
   // Get pin port
   this->_pins[pin.getPort()] = pin;
 }
+
+/**
+ * get a pin
+ *
+ * @param uint8_t port
+ * @return cppduino::Pin
+ */
+cppduino::Pin cppduino::Arduino::get_pin(uint8_t port) {
+  // return the pin
+  return this->_pins[port];
+}
