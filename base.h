@@ -41,7 +41,7 @@ namespace cppduino {
     uint8_t _model;
 
     // Project Pins
-    cppduino::Pin _pins[];
+    cppduino::Pin _pins[16];
   public:
     Arduino (uint8_t model); // with a defined model (Constructor)
     Arduino (void); // without defined model (Constructor)
