@@ -12,6 +12,7 @@
  */
 
 // Project Dependencies
+#include "Arduino.h"
 #include "base.h"
 
 /**
@@ -43,6 +44,8 @@ cppduino::Arduino::Arduino(void) {
  *  - clean serial
  */
 cppduino::Arduino::~Arduino() {
+  // Erase pins
+  this->pins = [];
 }
 
 /**
@@ -61,6 +64,12 @@ void cppduino::Arduino::set_pin(cppduino::Pin pin) {
  * @return cppduino::Pin
  */
 cppduino::Pin cppduino::Arduino::get_pin(uint8_t port) {
+  // check if out of memory
+  if (port > 16) {
+    std::cout << "[ERROR] out of memory - cppduino::Arduino::get_pin(uint8_t port)" << std::endl;
+    Serial.println("[ERROR] out of memory - cppduino::Arduino::get_pin(uint8_t port)");
+  }
+  
   // return the pin
   return this->_pins[port];
 }
